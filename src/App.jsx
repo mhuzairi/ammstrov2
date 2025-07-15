@@ -596,7 +596,7 @@ function App() {
             {[
               {
                 name: "Starter",
-                price: "$299",
+                price: "$1299",
                 period: "/month",
                 description: "Ideal for small aviation operators looking to streamline processes and gain valuable insights.",
                 features: [
@@ -609,7 +609,7 @@ function App() {
               },
               {
                 name: "Professional", 
-                price: "$799",
+                price: "$9599",
                 period: "/month",
                 description: "Perfect for growing aviation companies that need advanced features and support.",
                 features: [
