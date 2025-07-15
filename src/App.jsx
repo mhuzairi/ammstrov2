@@ -789,7 +789,7 @@ function App() {
               </div>
             </div>
             <div className="text-slate-400 text-sm">
-              © 2024 AMMSTRO. All rights reserved.
+              © 2025 AMMSTRO SDN BHD. All rights reserved.
             </div>
           </div>
         </div>
