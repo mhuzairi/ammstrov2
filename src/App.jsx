@@ -40,7 +40,6 @@ function App() {
     { id: 'how-it-works', label: 'How it works' },
     { id: 'enterprise', label: 'Enterprise' },
     { id: 'features', label: 'Features' },
-    { id: 'pricing', label: 'Pricing' },
     { id: 'faq', label: 'FAQ' }
   ]
 
@@ -221,22 +220,6 @@ function App() {
               <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
               Watch Demo
             </Button>
-          </motion.div>
-
-          {/* Customer Logos */}
-          <motion.div
-            className="text-center px-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            <p className="text-slate-400 mb-6">Trusted by 100+ aviation companies worldwide</p>
-            <div className="grid grid-cols-2 md:flex md:justify-center md:items-center gap-4 md:gap-8 opacity-60">
-              <div className="text-lg md:text-2xl font-bold text-center">AirAsia</div>
-              <div className="text-lg md:text-2xl font-bold text-center">Malaysia Airlines</div>
-              <div className="text-lg md:text-2xl font-bold text-center">Garuda Indonesia</div>
-              <div className="text-lg md:text-2xl font-bold text-center">Thai Airways</div>
-            </div>
           </motion.div>
 
           {/* Dashboard Preview */}
@@ -571,118 +554,8 @@ function App() {
         </div>
       </section>
 
-      {/* Pricing Section */}
-      <section id="pricing" className="py-20 bg-slate-900/50 animated-lines">
-        <div className="max-w-7xl mx-auto px-6">
-          <motion.div
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <Badge className="mb-4 bg-yellow-500/20 text-yellow-400 border-yellow-500/30">Pricing</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Choose the plan that fits your
-              <br />
-              <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
-                aviation maintenance needs
-              </span>
-            </h2>
-            <p className="text-xl text-slate-300">Get your free trial and experience the difference.</p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Starter",
-                price: "$1299",
-                period: "/month",
-                description: "Ideal for small aviation operators looking to streamline processes and gain valuable insights.",
-                features: [
-                  "Basic maintenance analytics and reporting",
-                  "Up to 5 aircraft",
-                  "Mobile app access",
-                  "Email support"
-                ],
-                popular: false
-              },
-              {
-                name: "Professional", 
-                price: "$9599",
-                period: "/month",
-                description: "Perfect for growing aviation companies that need advanced features and support.",
-                features: [
-                  "Enhanced analytics and insights",
-                  "Up to 25 aircraft",
-                  "Integration with popular aviation apps",
-                  "Priority support",
-                  "Custom reporting"
-                ],
-                popular: true
-              },
-              {
-                name: "Enterprise",
-                price: "Custom",
-                period: "",
-                description: "Custom solutions designed specifically for large aviation organizations with unique needs.",
-                features: [
-                  "Unlimited aircraft",
-                  "Dedicated account manager",
-                  "Comprehensive training and support",
-                  "Custom integrations",
-                  "SLA guarantee"
-                ],
-                popular: false
-              }
-            ].map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <Card className={`relative p-6 h-full ${plan.popular ? 'bg-gradient-to-br from-orange-500/20 to-red-600/20 border-orange-500/50' : 'bg-slate-800/50 border-slate-700'}`}>
-                  {plan.popular && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-orange-500 to-red-500">
-                      Most Popular
-                    </Badge>
-                  )}
-                  <CardHeader>
-                    <CardTitle className="text-white text-2xl">{plan.name}</CardTitle>
-                    <div className="flex items-baseline">
-                      <span className="text-4xl font-bold text-white">{plan.price}</span>
-                      <span className="text-slate-400 ml-1">{plan.period}</span>
-                    </div>
-                    <CardDescription className="text-slate-300">
-                      {plan.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ul className="space-y-3 mb-6">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center text-slate-300">
-                          <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                    <Button 
-                      className={`w-full ${plan.popular ? 'bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600' : 'bg-slate-700 hover:bg-slate-600'}`}
-                    >
-                      {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
-                    </Button>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section id="faq" className="py-20 hexagon-bg">
+      <section id="faq" className="py-20 relative hexagon-bg">
         <div className="max-w-4xl mx-auto px-6">
           <motion.div
             className="text-center mb-16"
